@@ -1,0 +1,10 @@
+com/partservice/exception/PartNotFoundException.class
+com/partservice/PartServiceApplication.class
+com/partservice/filter/MultitenancyFilter.class
+com/partservice/repository/PartRepository.class
+com/partservice/model/TenantContext.class
+com/partservice/config/ContextProvider.class
+com/partservice/controller/PartController.class
+com/partservice/config/OpenApiConfig.class
+com/partservice/service/PartService.class
+com/partservice/model/Part.class

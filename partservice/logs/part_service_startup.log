@@ -1,0 +1,199 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.partservice:partservice >---------------------
+[INFO] Building partservice 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ partservice >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ partservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ partservice ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ partservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/amehra/Documents/my_workspace/agentic-ai-playground/partservice/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ partservice ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ partservice <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ partservice ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-06-25 23:36:15.876  INFO 37797 --- [           main] com.partservice.PartServiceApplication   : Starting PartServiceApplication using Java 11.0.20 on MBP-XQK2GHHXNK with PID 37797 (/Users/amehra/Documents/my_workspace/agentic-ai-playground/partservice/target/classes started by amehra in /Users/amehra/Documents/my_workspace/agentic-ai-playground/partservice)
+2025-06-25 23:36:15.879 DEBUG 37797 --- [           main] com.partservice.PartServiceApplication   : Running with Spring Boot v2.7.18, Spring v5.3.31
+2025-06-25 23:36:15.880  INFO 37797 --- [           main] com.partservice.PartServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-25 23:36:16.811  INFO 37797 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-25 23:36:16.905  INFO 37797 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 1 JPA repository interfaces.
+2025-06-25 23:36:17.723  INFO 37797 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-06-25 23:36:17.743  INFO 37797 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-25 23:36:17.744  INFO 37797 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-06-25 23:36:17.979  INFO 37797 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-25 23:36:17.981  INFO 37797 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1915 ms
+2025-06-25 23:36:18.006  INFO 37797 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-25 23:36:18.109  INFO 37797 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-25 23:36:18.115  INFO 37797 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:partdb'
+2025-06-25 23:36:18.130  INFO 37797 --- [           main] c.partservice.filter.MultitenancyFilter  : MultitenancyFilter initialized
+2025-06-25 23:36:18.216  INFO 37797 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-25 23:36:18.340  INFO 37797 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-06-25 23:36:18.425  INFO 37797 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-06-25 23:36:18.628  INFO 37797 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists parts CASCADE 
+Hibernate: 
+    
+    create table parts (
+       id varchar(255) not null,
+        brand varchar(255) not null,
+        category varchar(255) not null,
+        compatible_vehicles varchar(1000),
+        created_at timestamp not null,
+        description varchar(1000),
+        dimensions varchar(255),
+        is_oem boolean,
+        location varchar(255),
+        name varchar(255) not null,
+        part_number varchar(255) not null,
+        price numeric(10,2) not null,
+        quantity_in_stock integer not null check (quantity_in_stock>=0),
+        supplier varchar(255),
+        supplier_part_number varchar(255),
+        updated_at timestamp,
+        warranty_months integer,
+        weight_kg numeric(10,3),
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table parts 
+       add constraint UK_fk0c0dn59mw7yuipou6nyvcd5 unique (part_number)
+2025-06-25 23:36:19.299  INFO 37797 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-06-25 23:36:19.303  INFO 37797 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-25 23:36:19.902  WARN 37797 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-25 23:36:20.002 DEBUG 37797 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-06-25 23:36:20.203 DEBUG 37797 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 27 mappings in 'requestMappingHandlerMapping'
+2025-06-25 23:36:20.608 DEBUG 37797 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-06-25 23:36:20.613 DEBUG 37797 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-06-25 23:36:20.925  INFO 37797 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-06-25 23:36:20.932  INFO 37797 --- [           main] com.partservice.PartServiceApplication   : Started PartServiceApplication in 5.534 seconds (JVM running for 6.205)
+2025-06-25 23:36:21.899  INFO 37797 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-25 23:36:21.899  INFO 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-25 23:36:21.900 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-06-25 23:36:21.900 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-06-25 23:36:21.900 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-06-25 23:36:21.901 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@8636cf4
+2025-06-25 23:36:21.901 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@38af386e
+2025-06-25 23:36:21.901 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-06-25 23:36:21.901  INFO 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-25 23:36:21.905 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/parts/health", parameters={}
+2025-06-25 23:36:21.908 DEBUG 37797 --- [nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.partservice.controller.PartController#health()
+2025-06-25 23:36:21.924 DEBUG 37797 --- [nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-06-25 23:36:21.924 DEBUG 37797 --- [nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{service=partservice, timestamp=2025-06-25T23:36:21.915385, status=UP}]
+2025-06-25 23:36:21.933 DEBUG 37797 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-25 23:36:48.379 DEBUG 37797 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/parts/health", parameters={}
+2025-06-25 23:36:48.381 DEBUG 37797 --- [nio-8082-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.partservice.controller.PartController#health()
+2025-06-25 23:36:48.384 DEBUG 37797 --- [nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-06-25 23:36:48.384 DEBUG 37797 --- [nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{service=partservice, timestamp=2025-06-25T23:36:48.383364, status=UP}]
+2025-06-25 23:36:48.387 DEBUG 37797 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-25 23:58:45.137 DEBUG 37797 --- [nio-8082-exec-5] c.partservice.filter.MultitenancyFilter  : Tenant context set: TenantContext{tenantId='cacargroup', dealerId='5', userId='ambujmehra', locale='en-US'}
+2025-06-25 23:58:45.161 DEBUG 37797 --- [nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/parts?size=1", parameters={masked}
+2025-06-25 23:58:45.163 DEBUG 37797 --- [nio-8082-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.partservice.controller.PartController#getAllParts()
+2025-06-25 23:58:45.164  INFO 37797 --- [nio-8082-exec-5] c.partservice.controller.PartController  : Getting all parts for tenant: cacargroup
+Hibernate: 
+    select
+        part0_.id as id1_0_,
+        part0_.brand as brand2_0_,
+        part0_.category as category3_0_,
+        part0_.compatible_vehicles as compatib4_0_,
+        part0_.created_at as created_5_0_,
+        part0_.description as descript6_0_,
+        part0_.dimensions as dimensio7_0_,
+        part0_.is_oem as is_oem8_0_,
+        part0_.location as location9_0_,
+        part0_.name as name10_0_,
+        part0_.part_number as part_nu11_0_,
+        part0_.price as price12_0_,
+        part0_.quantity_in_stock as quantit13_0_,
+        part0_.supplier as supplie14_0_,
+        part0_.supplier_part_number as supplie15_0_,
+        part0_.updated_at as updated16_0_,
+        part0_.warranty_months as warrant17_0_,
+        part0_.weight_kg as weight_18_0_ 
+    from
+        parts part0_
+2025-06-25 23:58:45.465 DEBUG 37797 --- [nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-06-25 23:58:45.482 DEBUG 37797 --- [nio-8082-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Part{id=P001, partNumber='OIL-FILTER-001', name='Standard Oil Filter', category='MAINTENANCE', bran (truncated)...]
+2025-06-25 23:58:45.544 DEBUG 37797 --- [nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-26 00:00:57.165 DEBUG 37797 --- [nio-8082-exec-6] c.partservice.filter.MultitenancyFilter  : Tenant context set: TenantContext{tenantId='cacargroup', dealerId='5', userId='ambujmehra', locale='en-US'}
+2025-06-26 00:00:57.169 DEBUG 37797 --- [nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/parts/part-number/BRAKE-PAD-FRONT-TOY-001", parameters={}
+2025-06-26 00:00:57.172 DEBUG 37797 --- [nio-8082-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.partservice.controller.PartController#getPartByPartNumber(String)
+2025-06-26 00:00:57.202  INFO 37797 --- [nio-8082-exec-6] c.partservice.controller.PartController  : Getting part by number BRAKE-PAD-FRONT-TOY-001 for tenant: cacargroup
+Hibernate: 
+    select
+        part0_.id as id1_0_,
+        part0_.brand as brand2_0_,
+        part0_.category as category3_0_,
+        part0_.compatible_vehicles as compatib4_0_,
+        part0_.created_at as created_5_0_,
+        part0_.description as descript6_0_,
+        part0_.dimensions as dimensio7_0_,
+        part0_.is_oem as is_oem8_0_,
+        part0_.location as location9_0_,
+        part0_.name as name10_0_,
+        part0_.part_number as part_nu11_0_,
+        part0_.price as price12_0_,
+        part0_.quantity_in_stock as quantit13_0_,
+        part0_.supplier as supplie14_0_,
+        part0_.supplier_part_number as supplie15_0_,
+        part0_.updated_at as updated16_0_,
+        part0_.warranty_months as warrant17_0_,
+        part0_.weight_kg as weight_18_0_ 
+    from
+        parts part0_ 
+    where
+        part0_.part_number=?
+2025-06-26 00:00:57.224 DEBUG 37797 --- [nio-8082-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-06-26 00:00:57.224 DEBUG 37797 --- [nio-8082-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Part{id=P025, partNumber='BRAKE-PAD-FRONT-TOY-001', name='Toyota Front Brake Pads', category='BRAKE_ (truncated)...]
+2025-06-26 00:00:57.225 DEBUG 37797 --- [nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-26 00:08:01.832  WARN 37797 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m12s955ms).
+2025-06-26 00:40:58.156  WARN 37797 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m56s326ms).
+2025-06-26 00:53:09.287  INFO 37797 --- [ionShutdownHook] c.partservice.filter.MultitenancyFilter  : MultitenancyFilter destroyed
+2025-06-26 00:53:09.370  INFO 37797 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-26 00:53:09.378  INFO 37797 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+Hibernate: 
+    
+    drop table if exists parts CASCADE 
+2025-06-26 00:53:09.420  INFO 37797 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-26 00:53:09.436  INFO 37797 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:16 h
+[INFO] Finished at: 2025-06-26T00:53:10+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.7.18:run (default-cli) on project partservice: Application finished with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

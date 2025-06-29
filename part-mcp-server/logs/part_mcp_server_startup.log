@@ -1,0 +1,118 @@
+
+> part-mcp-server@1.0.0 start
+> node dist/index.js
+
+[32minfo[39m: Starting Part MCP Server... {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.499Z"}
+[32minfo[39m: Configuration: {
+  "server": {
+    "port": 3005,
+    "host": "localhost",
+    "corsOrigins": [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://127.0.0.1:3000",
+      "http://127.0.0.1:3001",
+      "*"
+    ]
+  },
+  "mcp": {
+    "name": "part-mcp-server",
+    "version": "1.0.0",
+    "protocolVersion": "2024-11-05",
+    "implementation": {
+      "name": "part-mcp-server",
+      "version": "1.0.0"
+    }
+  },
+  "partService": {
+    "baseUrl": "http://localhost:8082",
+    "timeout": 5000
+  },
+  "logging": {
+    "level": "info",
+    "file": "logs/part-mcp-server.log"
+  }
+} {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.502Z"}
+[32minfo[39m: Part MCP Server started on localhost:3005 {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.516Z"}
+[32minfo[39m: MCP endpoint: http://localhost:3005/mcp {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.516Z"}
+[32minfo[39m: Health check: http://localhost:3005/health {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.516Z"}
+[32minfo[39m: SSE endpoint: http://localhost:3005/sse {"service":"part-mcp-server","timestamp":"2025-06-25T18:06:46.516Z"}
+[32minfo[39m: GET /health {"body":{},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:06:47.415Z"}
+[32minfo[39m: GET /health {"body":{},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:06:49.461Z"}
+[32minfo[39m: POST /mcp {"body":{"id":0,"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{},"clientInfo":{"name":"mcp-remote-fallback-test","version":"0.0.0"},"protocolVersion":"2025-03-26"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.023Z"}
+[32minfo[39m: MCP JSON-RPC request: initialize {"params":{"capabilities":{},"clientInfo":{"name":"mcp-remote-fallback-test","version":"0.0.0"},"protocolVersion":"2025-03-26"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.025Z"}
+[32minfo[39m: POST /mcp {"body":{"jsonrpc":"2.0","method":"notifications/initialized"},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.063Z"}
+[32minfo[39m: MCP JSON-RPC request: notifications/initialized {"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.064Z"}
+[32minfo[39m: POST /mcp {"body":{"id":0,"jsonrpc":"2.0","method":"initialize","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","capabilities":{},"clientInfo":{"name":"claude-ai (via mcp-remote 0.1.16)","version":"0.1.0"},"protocolVersion":"2024-11-05"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.216Z"}
+[32minfo[39m: MCP JSON-RPC request: initialize {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","capabilities":{},"clientInfo":{"name":"claude-ai (via mcp-remote 0.1.16)","version":"0.1.0"},"protocolVersion":"2024-11-05"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.216Z"}
+[32minfo[39m: POST /mcp {"body":{"jsonrpc":"2.0","method":"notifications/initialized","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.234Z"}
+[32minfo[39m: MCP JSON-RPC request: notifications/initialized {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.235Z"}
+[32minfo[39m: POST /mcp {"body":{"id":1,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.247Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.248Z"}
+[32minfo[39m: POST /mcp {"body":{"id":2,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.321Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.321Z"}
+[32minfo[39m: POST /mcp {"body":{"id":3,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.323Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.323Z"}
+[32minfo[39m: POST /mcp {"body":{"id":4,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.325Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.325Z"}
+[32minfo[39m: POST /mcp {"body":{"id":9,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.334Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.334Z"}
+[32minfo[39m: POST /mcp {"body":{"id":5,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.335Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.335Z"}
+[32minfo[39m: POST /mcp {"body":{"id":10,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.352Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.352Z"}
+[32minfo[39m: POST /mcp {"body":{"id":11,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.353Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.353Z"}
+[32minfo[39m: POST /mcp {"body":{"id":7,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.355Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.356Z"}
+[32minfo[39m: POST /mcp {"body":{"id":8,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.357Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.357Z"}
+[32minfo[39m: POST /mcp {"body":{"id":6,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.362Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.363Z"}
+[32minfo[39m: POST /mcp {"body":{"id":12,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.379Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:27:57.379Z"}
+[32minfo[39m: POST /mcp {"body":{"id":13,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.060Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.060Z"}
+[32minfo[39m: POST /mcp {"body":{"id":14,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.069Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.069Z"}
+[32minfo[39m: POST /mcp {"body":{"id":15,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.069Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:00.070Z"}
+[32minfo[39m: POST /mcp {"body":{"id":16,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:01.289Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:01.289Z"}
+[32minfo[39m: POST /mcp {"body":{"id":17,"jsonrpc":"2.0","method":"tools/call","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"size":1},"name":"list_parts"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:45.095Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/call {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"size":1},"name":"list_parts"},"service":"part-mcp-server","timestamp":"2025-06-25T18:28:45.096Z"}
+[32minfo[39m: Listing parts with filters: {"service":"part-mcp-server","size":1,"timestamp":"2025-06-25T18:28:45.096Z"}
+[32minfo[39m: POST /mcp {"body":{"id":18,"jsonrpc":"2.0","method":"tools/call","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"partNumber":"BRAKE-PAD-FRONT-TOY-001"},"name":"get_part_by_number"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.107Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/call {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"partNumber":"BRAKE-PAD-FRONT-TOY-001"},"name":"get_part_by_number"},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.110Z"}
+[32minfo[39m: Fetching part by part number: BRAKE-PAD-FRONT-TOY-001 {"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.112Z"}
+[32minfo[39m: POST /mcp {"body":{"id":19,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.120Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.120Z"}
+[32minfo[39m: POST /mcp {"body":{"id":21,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.120Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.120Z"}
+[32minfo[39m: POST /mcp {"body":{"id":20,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.121Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:57.121Z"}
+[32minfo[39m: POST /mcp {"body":{"id":22,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:58.310Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:30:58.321Z"}
+[32minfo[39m: POST /mcp {"body":{"id":23,"jsonrpc":"2.0","method":"tools/call","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"partNumber":"BRAKE-PAD-FRONT-TOY-001"},"name":"get_part_by_number"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:10.155Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/call {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685","arguments":{"partNumber":"BRAKE-PAD-FRONT-TOY-001"},"name":"get_part_by_number"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:10.156Z"}
+[32minfo[39m: POST /mcp {"body":{"id":24,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.327Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.331Z"}
+[32minfo[39m: POST /mcp {"body":{"id":26,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.332Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.332Z"}
+[32minfo[39m: POST /mcp {"body":{"id":25,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.332Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.333Z"}
+[32minfo[39m: POST /mcp {"body":{"id":27,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.965Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:17.966Z"}
+[32minfo[39m: POST /mcp {"body":{"id":28,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.736Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.737Z"}
+[32minfo[39m: POST /mcp {"body":{"id":30,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.739Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.739Z"}
+[32minfo[39m: POST /mcp {"body":{"id":29,"jsonrpc":"2.0","method":"tools/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.739Z"}
+[32minfo[39m: MCP JSON-RPC request: tools/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:25.740Z"}
+[32minfo[39m: POST /mcp {"body":{"id":31,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:26.242Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T18:32:26.242Z"}
+[32minfo[39m: POST /mcp {"body":{"id":32,"jsonrpc":"2.0","method":"resources/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T19:19:35.429Z"}
+[32minfo[39m: MCP JSON-RPC request: resources/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T19:19:35.430Z"}
+[32minfo[39m: POST /mcp {"body":{"id":33,"jsonrpc":"2.0","method":"prompts/list","params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"}},"query":{},"service":"part-mcp-server","timestamp":"2025-06-25T19:19:36.557Z"}
+[32minfo[39m: MCP JSON-RPC request: prompts/list {"params":{"_claudeMcpAuthToken":"804d7a7520244508fa273744a6ec38013e07fb1bf9114e0acc9955d8cb1f8685"},"service":"part-mcp-server","timestamp":"2025-06-25T19:19:36.557Z"}
+[32minfo[39m: Received SIGTERM. Starting graceful shutdown... {"service":"part-mcp-server","timestamp":"2025-06-25T19:23:16.254Z"}

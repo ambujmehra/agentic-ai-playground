@@ -1,0 +1,50 @@
+import NodeCache from 'node-cache';
+import { Part, TenantHeaders, TenantContext } from '../mcp/types';
+export declare class PartService {
+    private client;
+    private cache;
+    private currentTenantHeaders;
+    constructor();
+    setTenantContext(tenantHeaders: TenantHeaders): void;
+    clearTenantContext(): void;
+    getTenantContext(): TenantContext | null;
+    private getCacheKey;
+    private setCache;
+    private getCache;
+    private deleteCache;
+    private invalidatePartCaches;
+    getCacheStats(): {
+        keys: number;
+        size: NodeCache.Stats;
+    };
+    clearCache(): void;
+    getAllParts(): Promise<Part[]>;
+    getPartById(id: string): Promise<Part>;
+    getPartByPartNumber(partNumber: string): Promise<Part>;
+    createPart(part: Partial<Part>): Promise<Part>;
+    updatePart(id: string, part: Partial<Part>): Promise<Part>;
+    deletePart(id: string): Promise<void>;
+    getPartsByCategory(category: string): Promise<Part[]>;
+    getPartsByBrand(brand: string): Promise<Part[]>;
+    getPartsByRepairOrder(repairOrderId: number): Promise<Part[]>;
+    getLowStockParts(threshold?: number): Promise<Part[]>;
+    getOutOfStockParts(): Promise<Part[]>;
+    updateStock(id: string, quantity: number): Promise<Part>;
+    adjustStock(id: string, adjustment: number): Promise<Part>;
+    checkAvailability(id: string, requiredQuantity: number): Promise<boolean>;
+    getAllCategories(): Promise<string[]>;
+    getAllBrands(): Promise<string[]>;
+    getHealthStatus(): Promise<any>;
+    healthCheck(): Promise<any>;
+    getPartStats(): Promise<any>;
+    listParts(page?: number, size?: number, category?: string, status?: string, search?: string): Promise<any>;
+    getPartByNumber(partNumber: string): Promise<Part>;
+    getPartsByManufacturer(manufacturer: string): Promise<Part[]>;
+    updatePartStock(id: string, quantity: number, operation: string): Promise<Part>;
+    searchParts(query: string, page?: number, size?: number): Promise<Part[]>;
+    getPartsByPriceRange(minPrice: number, maxPrice: number): Promise<Part[]>;
+    getPartsBySupplier(supplier: string): Promise<Part[]>;
+    bulkUpdatePartPrices(priceAdjustment: number, category?: string, manufacturer?: string): Promise<any>;
+    getPartInventoryValue(category?: string, manufacturer?: string): Promise<any>;
+}
+//# sourceMappingURL=partService.d.ts.map

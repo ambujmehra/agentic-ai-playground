@@ -1,0 +1,325 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.paymentservice:paymentservice >------------------
+[INFO] Building paymentservice 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ paymentservice >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ paymentservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ paymentservice ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ paymentservice ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/amehra/Documents/my_workspace/agentic-ai-playground/paymentservice/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ paymentservice ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ paymentservice <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ paymentservice ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2025-06-25 23:35:49.531  INFO 37645 --- [           main] c.p.PaymentServiceApplication            : Starting PaymentServiceApplication using Java 11.0.20 on MBP-XQK2GHHXNK with PID 37645 (/Users/amehra/Documents/my_workspace/agentic-ai-playground/paymentservice/target/classes started by amehra in /Users/amehra/Documents/my_workspace/agentic-ai-playground/paymentservice)
+2025-06-25 23:35:49.532  INFO 37645 --- [           main] c.p.PaymentServiceApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-06-25 23:35:51.485  INFO 37645 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-25 23:35:51.559  INFO 37645 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
+2025-06-25 23:35:52.200  INFO 37645 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-25 23:35:52.206  INFO 37645 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-25 23:35:52.207  INFO 37645 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2025-06-25 23:35:52.510  INFO 37645 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-25 23:35:52.510  INFO 37645 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2958 ms
+2025-06-25 23:35:52.769  INFO 37645 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-25 23:35:53.017  INFO 37645 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-25 23:35:53.026  INFO 37645 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:payments_db'
+2025-06-25 23:35:53.367  INFO 37645 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-25 23:35:53.435  INFO 37645 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-06-25 23:35:53.635  INFO 37645 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-06-25 23:35:53.681  INFO 37645 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-06-25 23:35:54.202 DEBUG 37645 --- [           main] org.hibernate.SQL                        : drop table if exists payment_links CASCADE 
+Hibernate: drop table if exists payment_links CASCADE 
+2025-06-25 23:35:54.204 DEBUG 37645 --- [           main] org.hibernate.SQL                        : drop table if exists transactions CASCADE 
+Hibernate: drop table if exists transactions CASCADE 
+2025-06-25 23:35:54.210 DEBUG 37645 --- [           main] org.hibernate.SQL                        : create table payment_links (id bigint generated by default as identity, amount numeric(19,2) not null, created_at timestamp not null, currency varchar(255) not null, customer_email varchar(255) not null, description varchar(500), expiry_date timestamp not null, invoice_id varchar(255) not null, invoice_number varchar(255) not null, link_id varchar(255) not null, status varchar(255) not null, transaction_id bigint not null, primary key (id))
+Hibernate: create table payment_links (id bigint generated by default as identity, amount numeric(19,2) not null, created_at timestamp not null, currency varchar(255) not null, customer_email varchar(255) not null, description varchar(500), expiry_date timestamp not null, invoice_id varchar(255) not null, invoice_number varchar(255) not null, link_id varchar(255) not null, status varchar(255) not null, transaction_id bigint not null, primary key (id))
+2025-06-25 23:35:54.237 DEBUG 37645 --- [           main] org.hibernate.SQL                        : create table transactions (id bigint generated by default as identity, amount numeric(19,2) not null, card_type varchar(255) not null, created_at timestamp not null, currency varchar(255) not null, customer_email varchar(255) not null, customer_id varchar(255) not null, description varchar(500), invoice_id varchar(255) not null, invoice_number varchar(255) not null, payment_method varchar(255), payment_type varchar(255) not null, processed_at timestamp, status varchar(255) not null, transaction_reference varchar(255) not null, updated_at timestamp, primary key (id))
+Hibernate: create table transactions (id bigint generated by default as identity, amount numeric(19,2) not null, card_type varchar(255) not null, created_at timestamp not null, currency varchar(255) not null, customer_email varchar(255) not null, customer_id varchar(255) not null, description varchar(500), invoice_id varchar(255) not null, invoice_number varchar(255) not null, payment_method varchar(255), payment_type varchar(255) not null, processed_at timestamp, status varchar(255) not null, transaction_reference varchar(255) not null, updated_at timestamp, primary key (id))
+2025-06-25 23:35:54.238 DEBUG 37645 --- [           main] org.hibernate.SQL                        : alter table payment_links add constraint UK_c5fgd6nepsiyobqxnjlfe3o2 unique (link_id)
+Hibernate: alter table payment_links add constraint UK_c5fgd6nepsiyobqxnjlfe3o2 unique (link_id)
+2025-06-25 23:35:54.239 DEBUG 37645 --- [           main] org.hibernate.SQL                        : alter table transactions add constraint UK_94m9euoxupnom1p8mtwmk9q4g unique (transaction_reference)
+Hibernate: alter table transactions add constraint UK_94m9euoxupnom1p8mtwmk9q4g unique (transaction_reference)
+2025-06-25 23:35:54.241  INFO 37645 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-06-25 23:35:54.247  INFO 37645 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-25 23:35:55.182  WARN 37645 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-25 23:35:55.446 DEBUG 37645 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-06-25 23:35:55.518 DEBUG 37645 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 30 mappings in 'requestMappingHandlerMapping'
+2025-06-25 23:35:55.531 DEBUG 37645 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-06-25 23:35:55.536 DEBUG 37645 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-06-25 23:35:55.842  INFO 37645 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-06-25 23:35:56.004  INFO 37645 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-25 23:35:56.014  INFO 37645 --- [           main] c.p.PaymentServiceApplication            : Started PaymentServiceApplication in 7.184 seconds (JVM running for 7.995)
+2025-06-25 23:35:56.049 DEBUG 37645 --- [           main] org.hibernate.SQL                        : select count(*) as col_0_0_ from transactions transactio0_
+Hibernate: select count(*) as col_0_0_ from transactions transactio0_
+2025-06-25 23:35:56.129 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.131 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [1500.00]
+2025-06-25 23:35:56.132 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [VISA]
+2025-06-25 23:35:56.132 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.067920]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [john.doe@example.com]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-001]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Payment for subscription service]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-001]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-001]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [**** **** **** 1234]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [CREDIT]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [2025-06-25T21:35:56.065485]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [CAPTURED]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756067]
+2025-06-25 23:35:56.133 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.067928]
+2025-06-25 23:35:56.145 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.146 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [750.50]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [MASTERCARD]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.145101]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [jane.smith@example.com]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-002]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Product purchase]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-002]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-002]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [**** **** **** 5678]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [DEBIT]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [INITIATED]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756145]
+2025-06-25 23:35:56.147 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.145250]
+2025-06-25 23:35:56.149 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.149 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [2250.75]
+2025-06-25 23:35:56.149 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [AMEX]
+2025-06-25 23:35:56.149 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.149072]
+2025-06-25 23:35:56.149 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.149 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [bob.wilson@example.com]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-003]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Premium service upgrade]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-003]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-003]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [**** **** **** 9012]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [CREDIT]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [FAILED]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756149]
+2025-06-25 23:35:56.150 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.149083]
+2025-06-25 23:35:56.152 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [500.00]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [RUPAY]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.151772]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [alice.brown@example.com]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-004]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Mobile recharge]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-004]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-004]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [**** **** **** 3456]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [DEBIT]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [2025-06-25T23:05:56.151556]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [CAPTURED]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756151]
+2025-06-25 23:35:56.152 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.151776]
+2025-06-25 23:35:56.154 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [3200.00]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [UPI]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.153946]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [charlie.davis@example.com]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-005]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Laptop purchase]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-005]
+2025-06-25 23:35:56.154 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-005]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [charlie@upi]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [CREDIT]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [INITIATED]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756153]
+2025-06-25 23:35:56.155 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.153956]
+2025-06-25 23:35:56.156 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [1200.25]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [NETBANKING]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.156049]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [diana.jones@example.com]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [CUST-006]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Insurance premium]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-006]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-006]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [SBI NetBanking]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [DEBIT]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [CANCELLED]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756156]
+2025-06-25 23:35:56.156 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.156060]
+2025-06-25 23:35:56.157 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.157 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [800.00]
+2025-06-25 23:35:56.157 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [VISA]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.157644]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [mike.taylor@example.com]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [SYSTEM_GENERATED]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Consulting service payment]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-007]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-007]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [Pending]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [CREDIT]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [INITIATED]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756157]
+2025-06-25 23:35:56.158 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.157650]
+2025-06-25 23:35:56.165 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.165 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [1500.00]
+2025-06-25 23:35:56.180 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [MASTERCARD]
+2025-06-25 23:35:56.180 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.164147]
+2025-06-25 23:35:56.180 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.180 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [sara.clark@example.com]
+2025-06-25 23:35:56.180 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [SYSTEM_GENERATED]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Event ticket booking]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-008]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-008]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [Pending]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [DEBIT]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [INITIATED]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756164]
+2025-06-25 23:35:56.181 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.164199]
+2025-06-25 23:35:56.185 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [800.00]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [2025-06-25T23:35:56.184609]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [mike.taylor@example.com]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [Consulting service payment]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [2025-06-30T23:35:56.183483]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [INV-007]
+2025-06-25 23:35:56.185 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-2024-007]
+2025-06-25 23:35:56.186 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [LINK_1750874756184]
+2025-06-25 23:35:56.186 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [ACTIVE]
+2025-06-25 23:35:56.186 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [BIGINT] - [7]
+2025-06-25 23:35:56.187 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [1500.00]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [2025-06-25T23:35:56.187370]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [sara.clark@example.com]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [Event ticket booking]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [2025-06-28T23:35:56.187205]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [INV-008]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-2024-008]
+2025-06-25 23:35:56.187 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [LINK_1750874756187]
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [ACTIVE]
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [BIGINT] - [8]
+2025-06-25 23:35:56.188 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into transactions (id, amount, card_type, created_at, currency, customer_email, customer_id, description, invoice_id, invoice_number, payment_method, payment_type, processed_at, status, transaction_reference, updated_at) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [300.00]
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [UPI]
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [TIMESTAMP] - [2025-06-25T23:35:56.188576]
+2025-06-25 23:35:56.188 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [expired.user@example.com]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [SYSTEM_GENERATED]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [Expired payment link]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-009]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [INV-2024-009]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [Pending]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [CREDIT]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [12] as [TIMESTAMP] - [null]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [13] as [VARCHAR] - [INITIATED]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [14] as [VARCHAR] - [TXN_1750874756188]
+2025-06-25 23:35:56.189 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [15] as [TIMESTAMP] - [2025-06-25T23:35:56.188583]
+2025-06-25 23:35:56.190 DEBUG 37645 --- [           main] org.hibernate.SQL                        : insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into payment_links (id, amount, created_at, currency, customer_email, description, expiry_date, invoice_id, invoice_number, link_id, status, transaction_id) values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [300.00]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [2025-06-25T23:35:56.190139]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [INR]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [expired.user@example.com]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [Expired payment link]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [2025-06-24T23:35:56.190019]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [INV-009]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [INV-2024-009]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [VARCHAR] - [LINK_1750874756190]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [VARCHAR] - [EXPIRED]
+2025-06-25 23:35:56.190 TRACE 37645 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [BIGINT] - [9]
+Dummy data loaded successfully!
+2025-06-25 23:35:56.191 DEBUG 37645 --- [           main] org.hibernate.SQL                        : select count(*) as col_0_0_ from transactions transactio0_
+Hibernate: select count(*) as col_0_0_ from transactions transactio0_
+Created 9 transactions
+2025-06-25 23:35:56.193 DEBUG 37645 --- [           main] org.hibernate.SQL                        : select count(*) as col_0_0_ from payment_links paymentlin0_
+Hibernate: select count(*) as col_0_0_ from payment_links paymentlin0_
+Created 3 payment links
+2025-06-25 23:35:57.881  INFO 37645 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-25 23:35:57.881  INFO 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-25 23:35:57.881 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-06-25 23:35:57.881 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-06-25 23:35:57.881 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-06-25 23:35:57.882 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@440d2d64
+2025-06-25 23:35:57.883 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@68f1b89
+2025-06-25 23:35:57.883 DEBUG 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-06-25 23:35:57.883  INFO 37645 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-25 23:35:57.886  WARN 37645 --- [nio-8080-exec-1] c.p.filter.MultitenancyFilter            : Tenant validation failed: Missing or empty X-Tenant-Id header
+2025-06-25 23:36:31.769 DEBUG 37645 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2025-06-25 23:36:31.832 DEBUG 37645 --- [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2025-06-25 23:36:31.875 DEBUG 37645 --- [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@af01988]
+2025-06-25 23:36:32.046 DEBUG 37645 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-25 23:36:32.061 DEBUG 37645 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2025-06-25 23:36:32.062 DEBUG 37645 --- [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2025-06-25 23:36:32.062 DEBUG 37645 --- [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@1efdb3a6]
+2025-06-25 23:36:32.063 DEBUG 37645 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-25 23:36:47.753  WARN 37645 --- [nio-8080-exec-5] c.p.filter.MultitenancyFilter            : Tenant validation failed: Missing or empty X-Tenant-Id header
+2025-06-25 23:36:48.696 DEBUG 37645 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/actuator/health", parameters={}
+2025-06-25 23:36:48.700 DEBUG 37645 --- [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/vnd.spring-boot.actuator.v3+json, application/vnd.spring-boot.actuator.v2+json, application/json]
+2025-06-25 23:36:48.701 DEBUG 37645 --- [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [org.springframework.boot.actuate.health.SystemHealth@48e715f6]
+2025-06-25 23:36:48.702 DEBUG 37645 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-26 00:08:06.858  WARN 37645 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m12s958ms).
+2025-06-26 00:41:03.191  WARN 37645 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m56s377ms).
+2025-06-26 00:53:04.099  INFO 37645 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-26 00:53:04.140  INFO 37645 --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-06-26 00:53:04.143 DEBUG 37645 --- [ionShutdownHook] org.hibernate.SQL                        : drop table if exists payment_links CASCADE 
+Hibernate: drop table if exists payment_links CASCADE 
+2025-06-26 00:53:04.152 DEBUG 37645 --- [ionShutdownHook] org.hibernate.SQL                        : drop table if exists transactions CASCADE 
+Hibernate: drop table if exists transactions CASCADE 
+2025-06-26 00:53:04.164  INFO 37645 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-26 00:53:04.171  INFO 37645 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:17 h
+[INFO] Finished at: 2025-06-26T00:53:04+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:2.7.18:run (default-cli) on project paymentservice: Application finished with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
